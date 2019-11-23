@@ -6,7 +6,8 @@ WORKDIR /go/app
 
 COPY . .
 
-RUN go build -o app
+RUN go build -o app \
+    && go get github.com/markbates/refresh
 
 FROM alpine
 

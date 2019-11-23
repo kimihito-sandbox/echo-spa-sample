@@ -10,7 +10,7 @@ services:
       - ./:/go/app
     environment:
       - ENV=development
-    command: go run main.go
+    command: refresh run
     ports:
       - 1323:1323
   web:
