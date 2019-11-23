@@ -13,6 +13,8 @@ services:
     command: refresh run
     ports:
       - 1323:1323
+    depends_on:
+      - web
   web:
     build:
       context: .

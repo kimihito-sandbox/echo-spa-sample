@@ -20,8 +20,8 @@ func main() {
 
 	}
 
-	e.GET("/api", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
+	e.GET("/api/hello", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, "Hello, World!!")
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
