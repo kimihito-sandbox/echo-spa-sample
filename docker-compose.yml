@@ -8,6 +8,8 @@ services:
       target: build
     volumes:
       - ./:/go/app
+    environment:
+      - ENV=development
     command: go run main.go
     ports:
       - 1323:1323
@@ -15,7 +17,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.web
+    command: yarn start
     volumes:
       - ./web/:/web
     ports:
-      - 1323:1323
+      - 3000:3000
