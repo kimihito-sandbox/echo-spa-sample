@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+      target: build
+    volumes:
+      - ./:/go/app
+    command: go run main.go
+    ports:
+      - 1323:1323
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    volumes:
+      - ./web/:/web
+    ports:
+      - 1323:1323

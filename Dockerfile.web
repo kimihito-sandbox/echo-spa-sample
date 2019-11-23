@@ -1,0 +1,9 @@
+FROM node:lts
+
+WORKDIR /web
+
+COPY ./web .
+
+USER node
+
+
